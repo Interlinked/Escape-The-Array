@@ -3,7 +3,7 @@ import os
 import sys
 from time import sleep
 import time
-timer = 100
+
 
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
@@ -56,13 +56,12 @@ class Player:
         else:
             if(self.Gold > 100):
                 self.Level = self.Level + 1
-				self.Gold = self.Gold - 100
+                self.Gold = self.Gold - 100
                 gameboard.height = gameboard.height + 1
                 gameboard.width = gameboard.width + 1
                 gameboard.board = [[0 for i in range(gameboard.width)] for j in range(gameboard.height)]
                 gameboard.randomizeBoard()
-                global timer
-                timer = round(100*0.95**self.Level)
+                Module1.timer = round(100*0.95**self.Level)
                 
                 self.hasChecked = False
                 
@@ -173,7 +172,8 @@ import curses
 stdscr = curses.initscr()
 curses.noecho()
 curses.cbreak()
-
+stdscr.clear()
+stdscr.refresh()
 stdscr.keypad(True)
 gameboard = Module1.Board(10,10,100)
 gameboard.randomizeBoard()
@@ -192,20 +192,21 @@ def refresh():
         print("\n",rows,end="") 
     print("\nYou have",player.Health,"health.", "You have ",player.Gold," gold. ","You are at level ",player.Level,". You are at ", "(",player.playerX,",",player.playerY,")",end="")
 
-    print(" You have",timer,"moves left.")
+    print(" You have",Module1.timer,"moves left.")
     
 
 
 
     
 while player.isDead == False:
-    timer = timer - 1
-    if(timer == 0):
+    c = stdscr.getch()
+    Module1.timer = Module1.timer - 1
+    if(Module1.timer == 0):
         print("Ran out of moves, rerun the program!")
         player.isDead = True
-        sleep(1000)
+        break
      
-    c = stdscr.getch()
+
     
     if(player.Health == 0):
         print("You died, rerun the program.")
