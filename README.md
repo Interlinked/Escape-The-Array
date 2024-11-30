@@ -5,7 +5,7 @@ Mainly used as a way to practice 2D array movement for future projects, so this 
 
 
 # How to play
-
+Run pip install windows-curses if you are on windows!!!!
 Read the instructions. 
 WASD moves, you run into enemies to kill them, and try to get as far as possible without running out of moves. 
 
