@@ -1,6 +1,8 @@
+
 import random
 import time
 from time import sleep
+timer = 100
 class Board:
     def __init__(self, width, height,timer):
         self.height = height
