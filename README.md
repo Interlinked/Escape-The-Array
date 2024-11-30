@@ -13,7 +13,7 @@ WASD moves, you run into enemies to kill them, and try to get as far as possible
 
 On level generation, there is a very low, and I mean low, chance that the goal tries to spawn on the player. If it does, there will be no goal and you will be softlocked.
 This is incredibely rare, and is a simple fix, so i'm fighting laziness to fix it. 
-![image](https://github.com/user-attachments/assets/9a6134b6-3897-4b05-bd3b-f3a7bff8de23)
+![image](https://github.com/user-attachments/assets/2caca01d-d0f8-4254-94f6-ff7b5b367b42)
 Graph for reference. X axis is levels, Y is probability. At level 10 there's a 0.25 chance for this bug to happen. 
 
 Holding keys uses moves very quickly without updating the counter. This is an issue with curses, and while I'm sure my logic could be tweaked, I don't really care. Don't hold keys anyways.
