@@ -56,7 +56,7 @@ class Player:
         else:
             if(self.Gold > 100):
                 self.Level = self.Level + 1
-		self.Gold = self.Gold - 100
+				self.Gold = self.Gold - 100
                 gameboard.height = gameboard.height + 1
                 gameboard.width = gameboard.width + 1
                 gameboard.board = [[0 for i in range(gameboard.width)] for j in range(gameboard.height)]
